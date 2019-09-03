@@ -5,9 +5,9 @@ namespace VerificaPlacas
 {
     public class Placa : IComparable<Placa>
     {
-        public readonly string Identificador;
+        public readonly string Familia;
         public readonly string Lote;
-        public readonly string Numerando;
+        public readonly string Identificador;
 
         private readonly string _placa;
 
@@ -36,9 +36,9 @@ namespace VerificaPlacas
         private Placa(string placa)
         {
             _placa = placa;
-            Identificador = placa.Substring(0, 3);
+            Familia = placa.Substring(0, 3);
             Lote = placa.Substring(4, 2);
-            Numerando = placa.Substring(7, 2);
+            Identificador = placa.Substring(7, 2);
         }
         public override string ToString()
         {

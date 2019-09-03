@@ -31,7 +31,7 @@ namespace VerificaPlacas
 
                 todasPlacas.Add(placa, null);
 
-                string lote = placa.Identificador + '-' + placa.Lote;
+                string lote = placa.Familia + '-' + placa.Lote;
 
                 if (contadores.Keys.Any(c => c.Equals(lote)))
                     contadores[lote]++;
