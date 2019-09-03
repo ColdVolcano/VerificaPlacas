@@ -6,8 +6,8 @@ namespace VerificaPlacas
     public class Placa : IComparable<Placa>
     {
         public readonly string Identificador;
-        public readonly int Lote;
-        public readonly int Numerando;
+        public readonly string Lote;
+        public readonly string Numerando;
 
         private readonly string _placa;
 
@@ -37,8 +37,8 @@ namespace VerificaPlacas
         {
             _placa = placa;
             Identificador = placa.Substring(0, 3);
-            Lote = int.Parse(placa.Substring(4, 2));
-            Numerando = int.Parse(placa.Substring(7, 2));
+            Lote = placa.Substring(4, 2);
+            Numerando = placa.Substring(7, 2);
         }
         public override string ToString()
         {

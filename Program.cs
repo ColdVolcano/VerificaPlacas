@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
 
 namespace VerificaPlacas
 {
     class Program
     {
-
         static void Main()
         {
             SortedDictionary<string, int> contadores = new SortedDictionary<string, int>();
@@ -32,7 +31,7 @@ namespace VerificaPlacas
 
                 todasPlacas.Add(placa, null);
 
-                string lote = line.Substring(0, 6);
+                string lote = placa.Identificador + '-' + placa.Lote;
 
                 if (contadores.Keys.Any(c => c.Equals(lote)))
                     contadores[lote]++;
@@ -61,7 +60,7 @@ namespace VerificaPlacas
             {
                 Console.Write(placa);
                 longitudLinea += 10;
-                if (Console.WindowWidth < longitudLinea + 10 || placa == todasPlacas.Keys.Last())
+                if (Console.WindowWidth < longitudLinea + 10 || placa == todasPlacas.Keys[todasPlacas.Keys.Count - 1])
                 {
                     Console.WriteLine();
                     longitudLinea = 0;
@@ -81,7 +80,7 @@ namespace VerificaPlacas
             {
                 Console.Write(lote.Key + ' ' + lote.Value);
                 longitudLinea += 8 + lote.Value.ToString().Length;
-                if (Console.WindowWidth < longitudLinea + 10 || lote.Key == contadores.Last().Key)
+                if (Console.WindowWidth < longitudLinea + 10 || lote.Key == contadores.Keys.Last())
                 {
                     Console.WriteLine();
                     longitudLinea = 0;
