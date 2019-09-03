@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Diagrama.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="sample.txt">
